@@ -11,6 +11,7 @@ import br.senai.cadastroEnderecos.model.Endereco;
 import br.senai.cadastroEnderecos.repository.EnderecoRepository;
 
 @RestController
+@CrossOrigin(origins = "https://procura-cep-front-end.herokuapp.com")
 public class CEPController {
 	
 	@Autowired
@@ -25,7 +26,7 @@ public class CEPController {
 		
 	}
 	
-	@CrossOrigin(origins = "http://localhost:9090")
+	
 	@RequestMapping("/listar")
 	public Iterable<Endereco> listarEndereco() {
 		Iterable<Endereco> endereco = er.findAll();
