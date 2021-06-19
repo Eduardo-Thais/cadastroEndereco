@@ -17,7 +17,7 @@ public class DataConfiguration {
     public DataSource dataSource(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("org.postgresql.Driver");
-        dataSource.setUrl(System.getenv("DATABASE_URL"));
+        dataSource.setUrl(System.getenv("JDBC_DATABASE_URL"));
         //dataSource.setUsername("");
         //dataSource.setPassword("");
         return dataSource;
