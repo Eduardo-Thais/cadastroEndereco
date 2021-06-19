@@ -16,20 +16,20 @@ public class DataConfiguration {
 	@Bean
     public DataSource dataSource(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/viacep");
-        dataSource.setUsername("root");
-        dataSource.setPassword("");
+        dataSource.setDriverClassName("org.postgresql.Driver");
+        dataSource.setUrl(System.getenv("DATABASE_URL"));
+        //dataSource.setUsername("");
+        //dataSource.setPassword("");
         return dataSource;
     }
 	
 	@Bean
 	public JpaVendorAdapter jpaVendorAdapter(){
 		HibernateJpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
-		adapter.setDatabase(Database.MYSQL);
+		adapter.setDatabase(Database.POSTGRESQL);
 		adapter.setShowSql(true);
 		adapter.setGenerateDdl(true);
-		adapter.setDatabasePlatform("org.hibernate.dialect.MySQL5Dialect");
+		adapter.setDatabasePlatform("org.hibernate.dialect.PostgreSQLDialect");
 		adapter.setPrepareConnection(true);
 		return adapter;
 	}
