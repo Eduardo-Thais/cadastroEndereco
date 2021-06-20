@@ -11,7 +11,7 @@ import br.senai.cadastroEnderecos.model.Endereco;
 import br.senai.cadastroEnderecos.repository.EnderecoRepository;
 
 @RestController
-@CrossOrigin(origins = "https://procura-cep-front-end.herokuapp.com")
+@CrossOrigin(origins = "http://localhost:8080/")
 public class CEPController {
 	
 	@Autowired
